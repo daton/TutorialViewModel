@@ -3,6 +3,7 @@ package com.unitec.tutorialviewmodel
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.widget.TextView
 import androidx.activity.viewModels
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModel
@@ -20,6 +21,7 @@ class MainActivity : AppCompatActivity() {
         modelo.getArboles().observe(this, Observer<List<Arbol>> { arboles->
             //Aqui enviamos o actualizamos en la interface de usuario UI
             Log.i("XX","arboles ${arboles.size}")
+            findViewById<TextView>(R.id.putete).text="arbole ${arboles.get(0).descripcion}"
        })
 
 
